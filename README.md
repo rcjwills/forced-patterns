@@ -1,6 +1,6 @@
 # forced-patterns
 
-Forced-pattern filtering is a method to identify spatial patterns (linear combinations of empirical orthogonal functions (EOFs)) with the maximum ratio of signal to noise (with signal defined as variance that is agreed upon across an ensemble). The resulting forced patterns (FPs) isolate the patterns of forced change within climate model ensembles (where each similature is subject to the same external forcing). This method is presented in Wills et al. (2020, J. Climate, in review).
+Forced-pattern filtering is a method to identify spatial patterns (linear combinations of empirical orthogonal functions (EOFs)) with the maximum ratio of signal to noise (with signal defined as variance that is agreed upon across an ensemble). The resulting forced patterns (FPs) isolate the patterns of forced change within climate model ensembles (where each simulation is subject to the same external forcing). This method is presented in Wills et al. (2020, J. Climate, in review).
 
 Here, we provide an example FP filtering script in Matlab and Python (COMING SOON), with application to the CESM Large Ensemble (Kay et al. 2015). The script run_FP_filtering_example.m runs an example that creates Figs. 1 and 5 of the associated paper (Wills et al. 2020). The method is contained within forced_pattern_analysis.m.
 
