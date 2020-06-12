@@ -28,7 +28,7 @@ ts_CESM_anomalies_21_40_emean = mean(ts_CESM_anomalies_all(:,:,:,21:40),4);
 ts_CESM_anomalies_all = reshape(ts_CESM_anomalies_all,[nlon nlat n*ne]); % concatenate ensemble members in time
 s = size(ts_CESM_anomalies_all);
 
-[Y,X] = meshgrid(LAT_AXIS,LON_AXIS);
+[Y,~] = meshgrid(LAT_AXIS,LON_AXIS);
 area = cos(Y*pi/180);
 %area(isnan(mean(ts_CESM_all,3))) = 0; % CESM-LE doesn't have NaNs,
 %but enabling this line will ignore grid points that have NaNs
@@ -156,7 +156,7 @@ t = 1920:0.25:2019.75;
 figure; plot(t,Xe_1_20_global,'linewidth',0.7); 
 hold on; plot(t,Xe_21_40_global,'linewidth',0.7); 
 plot(t,Xe_global,'k','linewidth',1.5); 
-pretty_figure(550,275,'Year','Global-Mean Temp. (캜)','none','none',16);
+pretty_figure(550,275,'Year','Global-Mean Temp. (째C)','none','none',16);
 set(gca,'xlim',[1920 2020])
 set(gca,'ygrid','on')
 set(gca,'ylim',[-0.4 1]); set(gca,'ytick',-0.4:0.2:1)
@@ -165,7 +165,7 @@ set(gca,'ylim',[-0.4 1]); set(gca,'ytick',-0.4:0.2:1)
 figure; plot(t,Xe_EFCA_1_20_global,'linewidth',0.7); 
 hold on; plot(t,Xe_EFCA_21_40_global,'linewidth',0.7); 
 plot(t,Xe_EFCA_global,'k','linewidth',1.5); 
-pretty_figure(550,275,'Year','Global-Mean Temp. (캜)','none','none',16);
+pretty_figure(550,275,'Year','Global-Mean Temp. (째C)','none','none',16);
 set(gca,'xlim',[1920 2020])
 set(gca,'ygrid','on')
 set(gca,'ylim',[-0.4 1]); set(gca,'ytick',-0.4:0.2:1)
@@ -176,7 +176,7 @@ set(gca,'ylim',[-0.4 1]); set(gca,'ytick',-0.4:0.2:1)
 figure; plot(t,Xe_1_20_NA,'linewidth',0.7); 
 hold on; plot(t,Xe_21_40_NA,'linewidth',0.7); 
 plot(t,Xe_NA,'k','linewidth',1.5); 
-pretty_figure(550,275,'Year','NA SST 40-60캮 (캜)','none','none',16);
+pretty_figure(550,275,'Year','NA SST 40-60째N (째C)','none','none',16);
 set(gca,'xlim',[1920 2020])
 set(gca,'ygrid','on')
 set(gca,'ylim',[-0.6 0.6]); set(gca,'ytick',-0.6:0.3:0.6)
@@ -185,7 +185,7 @@ set(gca,'ylim',[-0.6 0.6]); set(gca,'ytick',-0.6:0.3:0.6)
 figure; plot(t,Xe_EFCA_1_20_NA,'linewidth',0.7); 
 hold on; plot(t,Xe_EFCA_21_40_NA,'linewidth',0.7); 
 plot(t,Xe_EFCA_NA,'k','linewidth',1.5); 
-pretty_figure(550,275,'Year','NA SST 40-60캮 (캜)','none','none',16);
+pretty_figure(550,275,'Year','NA SST 40-60째N (째C)','none','none',16);
 set(gca,'xlim',[1920 2020])
 set(gca,'ygrid','on')
 set(gca,'ylim',[-0.6 0.6]); set(gca,'ytick',-0.6:0.3:0.6)
@@ -196,7 +196,7 @@ set(gca,'ylim',[-0.6 0.6]); set(gca,'ytick',-0.6:0.3:0.6)
 figure; plot(t,Xe_1_20_east_west,'linewidth',0.7); 
 hold on; plot(t,Xe_21_40_east_west,'linewidth',0.7); 
 plot(t,Xe_east_west,'k','linewidth',1.5); 
-pretty_figure(550,275,'Year','Pac. East-West SST Diff. (캜)','none','none',16);
+pretty_figure(550,275,'Year','Pac. East-West SST Diff. (째C)','none','none',16);
 set(gca,'xlim',[1920 2020])
 set(gca,'ygrid','on')
 set(gca,'ylim',[-0.8 1]); set(gca,'ytick',-0.8:0.4:1.2)
@@ -205,7 +205,7 @@ set(gca,'ylim',[-0.8 1]); set(gca,'ytick',-0.8:0.4:1.2)
 figure; plot(t,Xe_EFCA_1_20_east_west,'linewidth',0.7); 
 hold on; plot(t,Xe_EFCA_21_40_east_west,'linewidth',0.7); 
 plot(t,Xe_EFCA_east_west,'k','linewidth',1.5); 
-pretty_figure(550,275,'Year','Pac. East-West SST Diff. (캜)','none','none',16);
+pretty_figure(550,275,'Year','Pac. East-West SST Diff. (째C)','none','none',16);
 set(gca,'xlim',[1920 2020])
 set(gca,'ygrid','on')
 set(gca,'ylim',[-0.8 1]); set(gca,'ytick',-0.8:0.4:1.2)
@@ -216,7 +216,7 @@ set(gca,'ylim',[-0.8 1]); set(gca,'ytick',-0.8:0.4:1.2)
 figure; plot(t,Xe_1_20_USA,'linewidth',0.7); 
 hold on; plot(t,Xe_21_40_USA,'linewidth',0.7); 
 plot(t,Xe_USA,'k','linewidth',1.5); 
-pretty_figure(550,275,'Year','US Temp. 30-45캮 (캜)','none','none',16);
+pretty_figure(550,275,'Year','US Temp. 30-45째N (째C)','none','none',16);
 set(gca,'xlim',[1920 2020])
 set(gca,'ygrid','on')
 set(gca,'ylim',[-1.25 1.75]); set(gca,'ytick',-1:0.5:1.5)
@@ -225,7 +225,7 @@ set(gca,'ylim',[-1.25 1.75]); set(gca,'ytick',-1:0.5:1.5)
 figure; plot(t,Xe_EFCA_1_20_USA,'linewidth',0.7); 
 hold on; plot(t,Xe_EFCA_21_40_USA,'linewidth',0.7); 
 plot(t,Xe_EFCA_USA,'k','linewidth',1.5); 
-pretty_figure(550,275,'Year','US Temp. 30-45캮 (캜)','none','none',16);
+pretty_figure(550,275,'Year','US Temp. 30-45째N (째C)','none','none',16);
 set(gca,'xlim',[1920 2020])
 set(gca,'ygrid','on')
 set(gca,'ylim',[-1.25 1.75]); set(gca,'ytick',-1:0.5:1.5)
@@ -235,7 +235,7 @@ if(1) % extra plots
     figure; plot(t,Xe_1_20_Arctic,'linewidth',0.7);
     hold on; plot(t,Xe_21_40_Arctic,'linewidth',0.7);
     plot(t,Xe_Arctic,'k','linewidth',1.5);
-    pretty_figure(550,275,'Year','Arctic Temp. 65-90캮 (캜)','none','none',16);
+    pretty_figure(550,275,'Year','Arctic Temp. 65-90째N (째C)','none','none',16);
     set(gca,'xlim',[1920 2020])
     set(gca,'ygrid','on')
     set(gca,'ylim',[-2 4]); set(gca,'ytick',-2:2:4)
@@ -244,7 +244,7 @@ if(1) % extra plots
     figure; plot(t,Xe_EFCA_1_20_Arctic,'linewidth',0.7);
     hold on; plot(t,Xe_EFCA_21_40_Arctic,'linewidth',0.7);
     plot(t,Xe_EFCA_Arctic,'k','linewidth',1.5);
-    pretty_figure(550,275,'Year','Arctic Temp. 65-90캮 (캜)','none','none',16);
+    pretty_figure(550,275,'Year','Arctic Temp. 65-90째N (째C)','none','none',16);
     set(gca,'xlim',[1920 2020])
     set(gca,'ygrid','on')
     set(gca,'ylim',[-2 4]); set(gca,'ytick',-2:2:4)
@@ -253,7 +253,7 @@ if(1) % extra plots
     figure; plot(t,Xe_1_20_Seattle,'linewidth',0.7);
     hold on; plot(t,Xe_21_40_Seattle,'linewidth',0.7);
     plot(t,Xe_Seattle,'k','linewidth',1.5);
-    pretty_figure(550,275,'Year','Seattle Temp. (캜)','none','none',16);
+    pretty_figure(550,275,'Year','Seattle Temp. (째C)','none','none',16);
     set(gca,'xlim',[1920 2020])
     set(gca,'ygrid','on')
     set(gca,'ylim',[-0.8 1.2]); set(gca,'ytick',-0.8:0.4:1.2)
@@ -262,7 +262,7 @@ if(1) % extra plots
     figure; plot(t,Xe_EFCA_1_20_Seattle,'linewidth',0.7);
     hold on; plot(t,Xe_EFCA_21_40_Seattle,'linewidth',0.7);
     plot(t,Xe_EFCA_Seattle,'k','linewidth',1.5);
-    pretty_figure(550,275,'Year','Seattle Temp. (캜)','none','none',16);
+    pretty_figure(550,275,'Year','Seattle Temp. (째C)','none','none',16);
     set(gca,'xlim',[1920 2020])
     set(gca,'ygrid','on')
     set(gca,'ylim',[-0.8 1.2]); set(gca,'ytick',-0.8:0.4:1.2)
